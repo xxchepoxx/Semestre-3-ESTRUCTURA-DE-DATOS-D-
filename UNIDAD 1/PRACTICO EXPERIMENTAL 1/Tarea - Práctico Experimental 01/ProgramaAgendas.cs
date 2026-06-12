@@ -468,9 +468,181 @@ class Program
         Console.WriteLine("║      SISTEMA DE AGENDA DE TURNOS - CLÍNICA MÉDICA             ║");
         Console.WriteLine("║              Universidad Estatal Amazónica                    ║");
         Console.WriteLine("╚════════════════════════════════════════════════════════════════╝\n");
+    {
+        Console.WriteLine("╔════════════════════════════════════════════════════════════════╗");
+        Console.WriteLine("║      SISTEMA DE AGENDA DE TURNOS - CLÍNICA MÉDICA             ║");
+        Console.WriteLine("║              Universidad Estatal Amazónica                    ║");
+        Console.WriteLine("╚════════════════════════════════════════════════════════════════╝\n");
 
-        // Crear instancia principal del sistema
         AgendaClinica agenda = new AgendaClinica();
+        Console.WriteLine("► Cargando datos iniciales...\n");
+
+        agenda.AgregarPaciente("Juan", "García", "1234567890", "0987654321", "juan@email.com");
+        agenda.AgregarPaciente("María", "López", "0987654321", "0912345678", "maria@email.com");
+        agenda.AgregarPaciente("Carlos", "Martínez", "1122334455", "0923456789", "carlos@email.com");
+        agenda.AgregarPaciente("Ana", "Rodríguez", "5544332211", "0934567890", "ana@email.com");
+
+        agenda.AgregarMedico("Pedro", "Sánchez", "Cardiología", "LIC-001");
+        agenda.AgregarMedico("Laura", "Fernández", "Dermatología", "LIC-002");
+        agenda.AgregarMedico("Roberto", "González", "Cardiología", "LIC-003");
+        agenda.AgregarMedico("Isabel", "Vega", "Pediatría", "LIC-004");
+
+        Console.WriteLine("\n► Creando turnos...\n");
+        agenda.AgregarTurno(1, 1, new DateTime(2024, 06, 15), "09:00", "Revisión cardíaca");
+        agenda.AgregarTurno(2, 2, new DateTime(2024, 06, 15), "10:00", "Consulta dermatológica");
+        agenda.AgregarTurno(3, 1, new DateTime(2024, 06, 16), "14:00", "Electrocardiograma");
+        agenda.AgregarTurno(1, 3, new DateTime(2024, 06, 16), "15:00", "Segunda opinión cardíaca");
+        agenda.AgregarTurno(4, 4, new DateTime(2024, 06, 17), "08:00", "Revisión pediátrica");
+
+        bool ejecutar = true;
+        while (ejecutar)
+        {
+            MostrarMenu();
+            Console.Write("\nSeleccione una opción: ");
+            string opcion = Console.ReadLine();
+
+            switch (opcion)
+            {
+                case "1":
+                    MostrarPacientes(agenda);
+                    break;
+                case "2":
+                    MostrarMedicos(agenda);
+                    break;
+                case "3":
+                    agenda.GenerarReporteTurnos();
+                    break;
+                case "4":
+                    BuscarTurnosPorPaciente(agenda);
+                    break;
+                case "5":
+                    BuscarTurnosPorMedico(agenda);
+                    break;
+                case "6":
+                    agenda.GenerarReporteOcupacionPorMedico();
+                    break;
+                case "7":
+                    CrearNuevoTurno(agenda);
+                    break;
+                case "8":
+                    Console.WriteLine("\n¡Hasta luego!");
+                    ejecutar = false;
+                    break;
+                default:
+                    Console.WriteLine("✗ Opción no válida.");
+                    break;
+            }
+        }
+        AgendaClinica agenda = new AgendaClinica();
+
+    static void MostrarMenu()
+    {
+        Console.WriteLine("\n┌─────────────────────────────────────────┐");
+        Console.WriteLine("│           MENÚ PRINCIPAL                │");
+        Console.WriteLine("├─────────────────────────────────────────┤");
+        Console.WriteLine("│ 1. Listar pacientes                     │");
+        Console.WriteLine("│ 2. Listar médicos                       │");
+        Console.WriteLine("│ 3. Listar todos los turnos              │");
+        Console.WriteLine("│ 4. Buscar turnos por paciente           │");
+        Console.WriteLine("│ 5. Buscar turnos por médico             │");
+        Console.WriteLine("│ 6. Reporte de ocupación por médico      │");
+        Console.WriteLine("│ 7. Crear nuevo turno                    │");
+        Console.WriteLine("│ 8. Salir                                │");
+        Console.WriteLine("└─────────────────────────────────────────┘");
+    }
+
+    static void MostrarPacientes(AgendaClinica agenda)
+    {
+        Console.WriteLine("\n" + new string('=', 80));
+        Console.WriteLine("LISTADO DE PACIENTES");
+        Console.WriteLine(new string('=', 80));
+        var pacientes = agenda.ListarTodosPacientes();
+        if (pacientes.Count == 0)
+            Console.WriteLine("No hay pacientes registrados.");
+        else
+            foreach (var paciente in pacientes)
+                Console.WriteLine(paciente);
+        Console.WriteLine(new string('=', 80));
+    }
+
+    static void MostrarMedicos(AgendaClinica agenda)
+    {
+        Console.WriteLine("\n" + new string('=', 80));
+        Console.WriteLine("LISTADO DE MÉDICOS");
+        Console.WriteLine(new string('=', 80));
+        var medicos = agenda.ListarTodosMedicos();
+        if (medicos.Count == 0)
+            Console.WriteLine("No hay médicos registrados.");
+        else
+            foreach (var medico in medicos)
+                Console.WriteLine(medico);
+        Console.WriteLine(new string('=', 80));
+    }
+
+    static void BuscarTurnosPorPaciente(AgendaClinica agenda)
+    {
+        Console.Write("\nIngrese el ID del paciente: ");
+        if (int.TryParse(Console.ReadLine(), out int idPaciente))
+        {
+            var turnos = agenda.BuscarTurnosPorPaciente(idPaciente);
+            MostrarResultadosBusqueda(turnos, $"Turnos del paciente (ID: {idPaciente})");
+        }
+        else
+            Console.WriteLine("✗ ID inválido.");
+    }
+
+    static void BuscarTurnosPorMedico(AgendaClinica agenda)
+    {
+        Console.Write("\nIngrese el ID del médico: ");
+        if (int.TryParse(Console.ReadLine(), out int idMedico))
+        {
+            var turnos = agenda.BuscarTurnosPorMedico(idMedico);
+            MostrarResultadosBusqueda(turnos, $"Turnos del médico (ID: {idMedico})");
+        }
+        else
+            Console.WriteLine("✗ ID inválido.");
+    }
+
+    static void MostrarResultadosBusqueda(List<Turno> turnos, string titulo)
+    {
+        Console.WriteLine("\n" + new string('=', 100));
+        Console.WriteLine(titulo);
+        Console.WriteLine(new string('=', 100));
+        if (turnos.Count == 0)
+            Console.WriteLine("No se encontraron resultados.");
+        else
+            foreach (var turno in turnos.OrderBy(t => t.Fecha).ThenBy(t => t.Hora))
+                Console.WriteLine(turno);
+        Console.WriteLine(new string('=', 100));
+    }
+
+    static void CrearNuevoTurno(AgendaClinica agenda)
+    {
+        Console.WriteLine("\n► CREAR NUEVO TURNO");
+        Console.Write("ID del paciente: ");
+        if (!int.TryParse(Console.ReadLine(), out int idPaciente))
+        {
+            Console.WriteLine("✗ ID de paciente inválido.");
+            return;
+        }
+        Console.Write("ID del médico: ");
+        if (!int.TryParse(Console.ReadLine(), out int idMedico))
+        {
+            Console.WriteLine("✗ ID de médico inválido.");
+            return;
+        }
+        Console.Write("Fecha (dd/MM/yyyy): ");
+        if (!DateTime.TryParseExact(Console.ReadLine(), "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out DateTime fecha))
+        {
+            Console.WriteLine("✗ Fecha inválida.");
+            return;
+        }
+        Console.Write("Hora (HH:mm): ");
+        string hora = Console.ReadLine();
+        Console.Write("Motivo de consulta: ");
+        string motivo = Console.ReadLine();
+        agenda.AgregarTurno(idPaciente, idMedico, fecha, hora, motivo);
+    }
 
         // ─────────────────────────────────────────────────────────────────────────────
         // CARGA DE DATOS INICIALES
