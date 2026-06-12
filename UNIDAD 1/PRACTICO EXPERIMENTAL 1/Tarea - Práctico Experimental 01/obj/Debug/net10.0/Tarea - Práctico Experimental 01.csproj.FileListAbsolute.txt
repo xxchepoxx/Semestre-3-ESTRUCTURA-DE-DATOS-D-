@@ -1,0 +1,15 @@
+D:\PROGRAMACION\Semestre 3 - ESTRUCTURA DE DATOS (D)\UNIDAD 1\PRACTICO EXPERIMENTAL 1\Tarea - Práctico Experimental 01\bin\Debug\net10.0\Tarea - Práctico Experimental 01.exe
+D:\PROGRAMACION\Semestre 3 - ESTRUCTURA DE DATOS (D)\UNIDAD 1\PRACTICO EXPERIMENTAL 1\Tarea - Práctico Experimental 01\bin\Debug\net10.0\Tarea - Práctico Experimental 01.deps.json
+D:\PROGRAMACION\Semestre 3 - ESTRUCTURA DE DATOS (D)\UNIDAD 1\PRACTICO EXPERIMENTAL 1\Tarea - Práctico Experimental 01\bin\Debug\net10.0\Tarea - Práctico Experimental 01.runtimeconfig.json
+D:\PROGRAMACION\Semestre 3 - ESTRUCTURA DE DATOS (D)\UNIDAD 1\PRACTICO EXPERIMENTAL 1\Tarea - Práctico Experimental 01\bin\Debug\net10.0\Tarea - Práctico Experimental 01.dll
+D:\PROGRAMACION\Semestre 3 - ESTRUCTURA DE DATOS (D)\UNIDAD 1\PRACTICO EXPERIMENTAL 1\Tarea - Práctico Experimental 01\bin\Debug\net10.0\Tarea - Práctico Experimental 01.pdb
+D:\PROGRAMACION\Semestre 3 - ESTRUCTURA DE DATOS (D)\UNIDAD 1\PRACTICO EXPERIMENTAL 1\Tarea - Práctico Experimental 01\obj\Debug\net10.0\Tarea - Práctico Experimental 01.GeneratedMSBuildEditorConfig.editorconfig
+D:\PROGRAMACION\Semestre 3 - ESTRUCTURA DE DATOS (D)\UNIDAD 1\PRACTICO EXPERIMENTAL 1\Tarea - Práctico Experimental 01\obj\Debug\net10.0\Tarea - Práctico Experimental 01.AssemblyInfoInputs.cache
+D:\PROGRAMACION\Semestre 3 - ESTRUCTURA DE DATOS (D)\UNIDAD 1\PRACTICO EXPERIMENTAL 1\Tarea - Práctico Experimental 01\obj\Debug\net10.0\Tarea - Práctico Experimental 01.AssemblyInfo.cs
+D:\PROGRAMACION\Semestre 3 - ESTRUCTURA DE DATOS (D)\UNIDAD 1\PRACTICO EXPERIMENTAL 1\Tarea - Práctico Experimental 01\obj\Debug\net10.0\Tarea - Práctico Experimental 01.csproj.CoreCompileInputs.cache
+D:\PROGRAMACION\Semestre 3 - ESTRUCTURA DE DATOS (D)\UNIDAD 1\PRACTICO EXPERIMENTAL 1\Tarea - Práctico Experimental 01\obj\Debug\net10.0\Tarea - Práctico Experimental 01.sourcelink.json
+D:\PROGRAMACION\Semestre 3 - ESTRUCTURA DE DATOS (D)\UNIDAD 1\PRACTICO EXPERIMENTAL 1\Tarea - Práctico Experimental 01\obj\Debug\net10.0\Tarea - Práctico Experimental 01.dll
+D:\PROGRAMACION\Semestre 3 - ESTRUCTURA DE DATOS (D)\UNIDAD 1\PRACTICO EXPERIMENTAL 1\Tarea - Práctico Experimental 01\obj\Debug\net10.0\refint\Tarea - Práctico Experimental 01.dll
+D:\PROGRAMACION\Semestre 3 - ESTRUCTURA DE DATOS (D)\UNIDAD 1\PRACTICO EXPERIMENTAL 1\Tarea - Práctico Experimental 01\obj\Debug\net10.0\Tarea - Práctico Experimental 01.pdb
+D:\PROGRAMACION\Semestre 3 - ESTRUCTURA DE DATOS (D)\UNIDAD 1\PRACTICO EXPERIMENTAL 1\Tarea - Práctico Experimental 01\obj\Debug\net10.0\Tarea - Práctico Experimental 01.genruntimeconfig.cache
+D:\PROGRAMACION\Semestre 3 - ESTRUCTURA DE DATOS (D)\UNIDAD 1\PRACTICO EXPERIMENTAL 1\Tarea - Práctico Experimental 01\obj\Debug\net10.0\ref\Tarea - Práctico Experimental 01.dll
