@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tarea - Práctico Experimental 01", "Tarea - Práctico Experimental 01\Tarea - Práctico Experimental 01.csproj", "{E1BD1E36-6207-45E3-95E1-75FCD900D54B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tarea - Práctico Experimental 01", "Tarea - Práctico Experimental 01.csproj", "{E1BD1E36-6207-45E3-95E1-75FCD900D54B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
