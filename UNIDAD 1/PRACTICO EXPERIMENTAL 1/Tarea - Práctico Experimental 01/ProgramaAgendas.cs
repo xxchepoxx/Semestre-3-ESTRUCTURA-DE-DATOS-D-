@@ -1,7 +1,7 @@
 /*
  * Práctico Experimental #1
  * Nombre: Marcelo Chacón
- * Fecha: 11/06/2026
+ * Fecha: 09/06/2026
  * Curso: Estructura de Datos (D)
  * Carrera: TICS "Tecnologías en la información"
  */
