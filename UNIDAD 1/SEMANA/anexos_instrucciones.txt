@@ -1,0 +1,13 @@
+Instrucciones para el apartado de anexos:
+
+1. No incluyas el texto completo de la guía de prácticas.
+2. En lugar de eso, coloca una captura de pantalla o evidencia visual de las clases principales y el flujo del programa.
+3. Sugeridos:
+   - Una captura de pantalla del explorador de soluciones mostrando los archivos `ProgramaAgendas.cs`, `AgendaClinica.cs`, `Paciente.cs`, `Medico.cs` y `Turno.cs`.
+   - Una captura de la sección de código donde se agrega un turno y donde se muestra el reporte de turnos.
+   - Si no puedes capturar, menciona específicamente: “captura de las clases principales y del método de reporte de turnos”.
+4. Evita adjuntar todo el código. Solo evidencia las partes clave:
+   - estructura de clases y relaciones,
+   - método de registro de turnos,
+   - método de búsqueda/visualización de reportes.
+5. Si la guía pide anexos, puedes dejar claro que el anexo incluye capturas de pantalla de las clases y de la ejecución de reportes, no código completo.

@@ -1,0 +1,37 @@
+Funcionamiento general del proyecto
+
+1. Estructura principal del programa:
+- `ProgramaAgendas.cs`: contiene el punto de entrada `Main`, el menú de interacción con el usuario y los métodos para ejecutar cada opción.
+- `AgendaClinica.cs`: clase gestora que administra pacientes, médicos y turnos; también genera reportes y visualizaciones.
+- `Paciente.cs`: define la entidad paciente con sus datos personales y un ID único.
+- `Medico.cs`: define la entidad médico con su especialidad y un ID único.
+- `Turno.cs`: define la entidad turno, que relaciona un paciente con un médico, fecha, hora, motivo y estado.
+- `HorarioDisponible.cs`: define la estructura de la matriz de horarios para mostrar disponibilidad.
+
+2. Significado de los IDs:
+- `IdPaciente`: identificador único para cada paciente registrado. Se usa para buscar turnos y relacionar pacientes con turnos.
+- `IdMedico`: identificador único para cada médico registrado. Se usa para buscar turnos y relacionar médicos con turnos.
+- `IdTurno`: identificador único para cada turno creado. Permite llevar un control individual de cada cita.
+
+3. Flujo de funcionamiento:
+- Al iniciar el programa, se crea una instancia de `AgendaClinica` y se agregan algunos pacientes, médicos y turnos de ejemplo.
+- El usuario elige una opción del menú para listar datos, crear nuevos registros o buscar información.
+- La agenda utiliza `List<Paciente>`, `List<Medico>` y `List<Turno>` para almacenar y manejar datos dinámicamente.
+- Los métodos de búsqueda en `AgendaClinica` permiten filtrar turnos por paciente, médico, fecha o estado.
+- La impresión de reportes muestra los elementos de las estructuras de datos en la consola.
+
+4. Consultas y reportes:
+- `ListarTodosPacientes` y `ListarTodosMedicos`: retornan las listas completas y permiten mostrar los registros.
+- `GenerarReporteTurnos`: muestra todos los turnos ordenados por fecha y hora.
+- `BuscarTurnosPorPaciente`, `BuscarTurnosPorMedico`, `BuscarTurnosPorFecha`: filtran los turnos según el criterio ingresado.
+- `BuscarPacientePorCedula`: localiza un paciente por su cédula y muestra los turnos asociados.
+- `MostrarMatrizHorarios`: presenta una matriz de disponibilidad de horarios basada en una matriz bidimensional.
+
+5. Cómo se representan los datos:
+- Pacientes y médicos se registran con un ID generado automáticamente, junto con su nombre, apellido y datos de contacto o especialidad.
+- Los turnos se crean usando el ID del paciente y del médico, fecha, hora y motivo.
+- La matriz de horarios es una representación visual de disponibilidad, aunque no está directamente vinculada con la verificación de turnos reales en esta versión.
+
+6. Notas finales:
+- El proyecto está diseñado para una aplicación de consola en C# con una estructura simple y clara.
+- Los IDs facilitan la búsqueda rápida de registros y permiten enlazar entidades distintas sin ambigüedad.

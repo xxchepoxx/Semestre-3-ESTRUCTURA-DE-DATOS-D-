@@ -1,0 +1,18 @@
+Conclusiones
+
+La práctica demuestra el uso de estructuras de datos básicas en C# para manejar una agenda de turnos. Se utilizó una lista dinámica (`List<T>`) para almacenar pacientes, médicos y turnos, y una matriz bidimensional para visualizar horarios disponibles.
+
+Resultados
+
+- Se logró listar y consultar pacientes, médicos y turnos.
+- Se implementó búsqueda de turnos por paciente, médico y fecha.
+- Se añadió un reporte general de turnos ordenados por fecha y hora.
+- Se incorporó una matriz visual de horarios para apoyar la visualización de disponibilidad.
+
+Análisis
+
+La solución cumple con los objetivos de la práctica porque permite organizar y consultar datos de forma clara. El uso de clases separadas mejora la claridad del código y facilita el mantenimiento.
+
+Recomendaciones
+
+Para una versión futura se puede integrar la matriz de horarios con la validación real de los turnos y optimizar la búsqueda con índices o diccionarios si la cantidad de datos crece.
