@@ -22,13 +22,13 @@ public class AgendaClinica
     // ─────────────────────────────────────────────────────────────────────────────
 
     // Lista de pacientes (vector dinámico)
-    private List<Paciente> pacientes;
+    private List<Paciente> pacientes = null!;
 
     // Lista de médicos (vector dinámico)
-    private List<Medico> medicos;
+    private List<Medico> medicos = null!;
 
     // Lista de turnos (vector dinámico)
-    private List<Turno> turnos;
+    private List<Turno> turnos = null!;
 
     // Contadores para generar IDs automáticos
     private int proximoIdPaciente = 1;
@@ -36,7 +36,13 @@ public class AgendaClinica
     private int proximoIdTurno = 1;
 
     // Matriz bidimensional para gestionar horarios disponibles
-    private HorarioDisponible[,] matrizHorarios;
+    private HorarioDisponible[,] matrizHorarios = null!;
+
+    // Horarios usados en la matriz de disponibilidad
+    private static readonly string[] HorasDisponibles =
+    {
+        "08:00", "09:00", "10:00", "11:00", "14:00", "15:00", "16:00", "17:00"
+    };
 
     // ─────────────────────────────────────────────────────────────────────────────
     // CONSTRUCTOR
@@ -63,14 +69,13 @@ public class AgendaClinica
     /// </summary>
     private void InicializarMatrizHorarios()
     {
-        string[] horas = { "08:00", "09:00", "10:00", "11:00", "14:00", "15:00", "16:00", "17:00" };
-        matrizHorarios = new HorarioDisponible[horas.Length, horas.Length];
+        matrizHorarios = new HorarioDisponible[HorasDisponibles.Length, HorasDisponibles.Length];
 
-        for (int i = 0; i < horas.Length; i++)
+        for (int i = 0; i < HorasDisponibles.Length; i++)
         {
-            for (int j = 0; j < horas.Length; j++)
+            for (int j = 0; j < HorasDisponibles.Length; j++)
             {
-                matrizHorarios[i, j] = new HorarioDisponible(horas[i], true);
+                matrizHorarios[i, j] = new HorarioDisponible(HorasDisponibles[i], true);
             }
         }
     }
@@ -109,7 +114,7 @@ public class AgendaClinica
     /// </summary>
     /// <param name="cedula">Número de cédula a buscar</param>
     /// <returns>Objeto Paciente encontrado o null</returns>
-    public Paciente BuscarPacientePorCedula(string cedula)
+    public Paciente? BuscarPacientePorCedula(string cedula)
     {
         return pacientes.FirstOrDefault(p => p.Cedula == cedula);
     }
@@ -179,8 +184,8 @@ public class AgendaClinica
     public void AgregarTurno(int idPaciente, int idMedico, DateTime fecha, string hora, string motivo)
     {
         // Buscar paciente y médico en las listas
-        Paciente paciente = pacientes.FirstOrDefault(p => p.IdPaciente == idPaciente);
-        Medico medico = medicos.FirstOrDefault(m => m.IdMedico == idMedico);
+        Paciente? paciente = pacientes.FirstOrDefault(p => p.IdPaciente == idPaciente);
+        Medico? medico = medicos.FirstOrDefault(m => m.IdMedico == idMedico);
 
         // Validar existencia de paciente y médico
         if (paciente == null || medico == null)
@@ -301,6 +306,36 @@ public class AgendaClinica
                 }
             }
         }
+        Console.WriteLine(new string('=', 80) + "\n");
+    }
+
+    /// <summary>
+    /// Mostrar Matriz de Horarios: Presenta los horarios disponibles en la matriz
+    /// </summary>
+    public void MostrarMatrizHorarios()
+    {
+        Console.WriteLine("\n" + new string('=', 80));
+        Console.WriteLine("MATRIZ DE HORARIOS DISPONIBLES");
+        Console.WriteLine(new string('=', 80));
+
+        Console.Write("Hora     ");
+        foreach (var hora in HorasDisponibles)
+        {
+            Console.Write($"{hora} ");
+        }
+        Console.WriteLine();
+
+        for (int i = 0; i < HorasDisponibles.Length; i++)
+        {
+            Console.Write($"{HorasDisponibles[i],-8}");
+            for (int j = 0; j < HorasDisponibles.Length; j++)
+            {
+                var disponible = matrizHorarios[i, j].Disponible ? "✔" : "✗";
+                Console.Write($"{disponible}        ");
+            }
+            Console.WriteLine();
+        }
+
         Console.WriteLine(new string('=', 80) + "\n");
     }
 }
