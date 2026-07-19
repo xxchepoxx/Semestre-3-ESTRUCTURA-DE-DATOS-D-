@@ -1,7 +1,6 @@
+# Configuración local de Visual Studio Code
+.vscode/
+
+# Archivos generados al compilar el proyecto
 bin/
 obj/
-.vs/
-.vscode/
-*.user
-*.suo
-*.log
