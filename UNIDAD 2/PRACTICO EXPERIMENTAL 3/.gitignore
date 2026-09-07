@@ -1,0 +1,22 @@
+# Compilacion y restauracion de .NET
+bin/
+obj/
+.vs/
+
+# Configuracion local del IDE
+.vscode/
+*.user
+*.suo
+*.userosscache
+*.csproj.user
+
+# Resultados de pruebas
+TestResults/
+
+# Archivos temporales y de sistema
+[Dd]ebug/
+[Rr]elease/
+*.tmp
+*.log
+.DS_Store
+Thumbs.db
